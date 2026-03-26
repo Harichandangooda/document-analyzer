@@ -23,7 +23,7 @@ def process_pdf(pdf_file: str) -> tuple[str, str]:
     return report.preview_text, str(output_path)
 
 
-with gr.Blocks(title="Deterministic PDF Document Analyzer", theme=gr.themes.Soft()) as demo:
+with gr.Blocks(title="Deterministic PDF Document Analyzer") as demo:
     gr.Markdown(
         """
         # Deterministic PDF Document Analyzer
@@ -45,7 +45,6 @@ with gr.Blocks(title="Deterministic PDF Document Analyzer", theme=gr.themes.Soft
         label="Report Preview",
         lines=22,
         max_lines=28,
-        show_copy_button=True,
     )
 
     analyze_button = gr.Button("Generate Report", variant="primary")
@@ -57,4 +56,4 @@ with gr.Blocks(title="Deterministic PDF Document Analyzer", theme=gr.themes.Soft
 
 
 if __name__ == "__main__":
-    demo.launch()
+    demo.launch(theme=gr.themes.Soft())
